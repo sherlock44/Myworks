@@ -1,0 +1,342 @@
+@charset "utf-8";
+body {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: "Microsoft Yahei", Helvetica;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.content {
+  background: url(../images/Mickey.jpg) no-repeat center center;
+  background-size: 100%;
+  width: 100%;
+  min-width: 320px;
+  max-width: 640px;
+/*  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;*/
+}
+.content .logo {
+  background: url(../images/logo.png) no-repeat top center;
+  background-size: 28px 63px;
+  width: 28px;
+  height: 63px;
+  position: absolute;
+  top: -2px;
+  left: 10%;
+}
+.content .join {
+  background: url(../images/Button.png) no-repeat top center;
+  background-size: 158px 36px;
+  width: 158px;
+  height: 36px;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  margin-left: -80px;
+  display: block;
+}
+.content .rule {
+  background: url(../images/Button1.png) no-repeat top center;
+  background-size: 73px 31px;
+  width: 73px;
+  height: 31px;
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  margin-left: -46px;
+}
+#fullbg {
+  background-color: #000;
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+}
+#dialog {
+  width: 270px;
+  height: 300px;
+  background: #fff9a1;
+  border-radius: 8px;
+  top: 15%;
+  left: 50%;
+  margin-left: -135px;
+  word-wrap: break-word;
+  padding: 1px;
+  position: absolute;
+  z-index: 50;
+  border-radius: 5px;
+  display: none;
+  padding: 0 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+#dialog .btn {
+  background: url(../images/arrow.png) no-repeat center center;
+  background-size: 23px 28px;
+  width: 23px;
+  height: 28px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+#dialog .text {
+  width: 265px;
+  height: 260px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#dialog .text div,
+#dialog .text span {
+  text-align: left;
+  display: block;
+}
+#dialog .text div {
+  color: #ff3736;
+  font-size: 16px;
+  margin-top: 10px;
+}
+#dialog .text span {
+  color: #666;
+  font-size: 14px;
+}
+#dialog .text p {
+  color: #ff3736;
+  font-size: 14px;
+  text-align: left;
+}
+#dialog .text p span {
+  display: block;
+  color: #ff3736;
+  font-size: 12px;
+}
+.center {
+  width: 100%;
+  min-width: 320px;
+  max-width: 640px;
+  /*height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;*/
+  padding-bottom:44px;
+  /*overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;*/
+}
+.center .top {
+  width: 100%;
+  height: 104px;
+  background: url(../images/bg.jpg) no-repeat center center;
+}
+.center .top span {
+  background: url(../images/biao.png) no-repeat center center;
+  background-size: 314px 104px;
+  width: 314px;
+  height: 104px;
+  position: absolute;
+  left: 50%;
+  margin-left: -157px;
+  top: 0;
+}
+.center .item {
+  line-height: 24px;
+}
+.center .item .title {
+  background: #ccc;
+  padding-left: 15px;
+  color: #333;
+}
+.center .item .title a {
+  float: right;
+  font-size: 26px;
+  padding-right: 15px;
+  color: #333;
+}
+.center .item .list {
+  margin-bottom: 15px;
+}
+.center .item .list .col {
+  margin: 0 15px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+.center .item .list .col .img {
+  float: left;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #999999 url(../images/yestone.jpg) no-repeat center;
+  background-size: 85px 70px;
+  position: relative;
+  margin: 10px 0;
+}
+.center .item .list .col .img span {
+  background-size: 30px 29px;
+  width: 30px;
+  height: 29px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  text-align: left;
+  font-size: 10px;
+}
+.center .item .list .col .img .red {
+  background: url(../images/block.png) no-repeat center center;
+}
+.center .item .list .col .img .orange {
+  background: url(../images/block1.png) no-repeat center center;
+}
+.center .item .list .col .img .oranges {
+  background: url(../images/block3.png) no-repeat center center;
+}
+.center .item .list .col .img .gray {
+  background: url(../images/block2.png) no-repeat center center;
+}
+.center .item .list .col .text {
+  float: left;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  padding-top: 20px;
+}
+.center .item .list .col .text span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  line-height: 16px;
+}
+.center .item .list .col .tic {
+  float: right;
+  line-height: 30px;
+  font-size: 14px;
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+  height: 30px;
+  margin-top: 25px;
+}
+.center .item .list .col .tic .btn {
+  display: block;
+  color: #666;
+}
+.center .item .list .col .tic .active {
+  display: block;
+  color: #333;
+}
+.center .item .list .col .tic .active span {
+  background: url(../images/good.png) no-repeat center center;
+  background-size: 15px 14px;
+  width: 15px;
+  height: 14px;
+  display: block;
+  float: left;
+  margin-top: 7px;
+  padding-right: 5px;
+}
+.center .item .list .col .tic .img {
+  background: url(../images/good1.png) no-repeat center center;
+  background-size: 15px 14px;
+  width: 15px;
+  height: 14px;
+  display: block;
+  float: left;
+  margin-top: 7px;
+  padding-right: 5px;
+}
+#bg {
+  background-color: #000;
+  left: 0;
+  opacity: 0.9;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+}
+#write {
+  width: 260px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: fixed;
+  left: 50%;
+  margin-left: -130px;
+  top: 50%;
+  margin-top: -45px;
+  display: none;
+  z-index: 100;
+  padding-top: 5px;
+}
+#write a {
+  position: absolute;
+  right: 0;
+  top: -5px;
+  font-size: 22px;
+  color: #999;
+}
+#write label {
+  display: block;
+  border-bottom: 1px solid #ccc;
+  line-height: 30px;
+  padding: 10px;
+  font-size: 14px;
+}
+#write label input {
+  border: none;
+  outline: none;
+  font-size:14px;
+  height:30px;
+}
+#write #wrongmsg{
+	font-size:12px;
+	text-align:center;
+	color:red;
+	height:20px;
+}
+#write button {
+  display: block;
+  width: 50%;
+  line-height: 26px;
+  text-align: center;
+  outline: none;
+  border: none;
+  background: #fff;
+  font-size: 16px;
+  float:left;
+  line-height: 30px;
+  margin: 5px 0;
+}
+#write #nobut{
+	border-left:1px solid #ccc;
+}
+.images{
+	background:url(../images/fx.png) no-repeat center center;
+	background-size:255px 168px;
+	position:absolute;
+	top:0;
+	right:0;
+	width:255px;
+	height:168px;
+	z-index:10;
+	display:none;
+}

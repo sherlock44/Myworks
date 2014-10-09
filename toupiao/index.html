@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>金房三径</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="css/mango.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+    <style type="text/css">
+        .container{ height: 100%; }
+        .content{ height: 100%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="logo"></div>
+            <a class="join" href="join.php"></a>
+            <div class="rule"></div>
+        </div>
+        <div id="fullbg"></div>
+        <div id="dialog">
+            <a class="btn"></a>
+            <div class="text">
+                <img src="images/rule.png" height="26" width="82"/>
+                <div>网络投票日期：</div>
+                <span>2014年8月15日0:00—8月24日17：00 </span>
+
+                <div>奖项设置：</div>
+                <span>一等奖1名（豪华香港迪斯尼双人5日游）；</span>
+                <span>二等奖2名（进口专业吉它）；</span>
+                <span>三等奖3名（进口尤克里里）。</span>
+
+                <div>投票规则：</div>
+                <span>每个有效手机号码限投5票/日，如发现刷票行为取消参与资格；</span>
+
+                <div>中奖公告： </div>
+                <span> 请密切关注【金房三径】微信公众账号；</span>
+                <div>免责声明：</div>
+                <span>本次网络海选由金房三径主办，投票结果与比赛结果无关；</span>
+                <span> 本次活动最终解释权归金房三径所有；</span>
+                <span>中奖者的相关税费自理。</span>
+            </div>
+        </div>
+    </div>
+	<div class="footer">
+			<div class="bt-menu">
+				<div>
+					<a href="../index.html"><span>首页</span></a>
+				</div>
+				<div>
+					<a href="javascript:void(0)" onclick="more(this)"><i class="icon-th-large"></i><span>楼盘介绍</span></a>
+					<div class="submenu">
+						<a href="../group.html">集团介绍</a>
+						<a href="../summary.html">项目品鉴</a>
+						<a href="../photo.html">实景呈现</a>
+					</div>
+				</div>
+				<div>
+					<a href="../look.html"><span>预约看房</span></a>
+				</div>
+				<div>
+					<a href="#"><span>人气评选</span></a>
+				</div>
+			</div>
+		</div>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../scripts/minisite.js"></script>
+<script>
+//弹出层
+   $(function(){
+
+        $('.rule').click(function(e){
+            var bh = $(window).height(); 
+            var bw = $(window).width(); 
+            $("#fullbg").css({ 
+            height:bh, 
+            width:bw, 
+            display:"block" 
+            }); 
+            $("#dialog").show();
+        });
+        $('.btn').click(function(e){
+           $("#dialog,#fullbg").hide(); 
+        });
+    });
+</script>
+    <div style="display:none">
+        <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F37ed4b4dba7caa4e754c943e300a49d9' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+    </div>
+</body>
+</html>
