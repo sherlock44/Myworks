@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>芒果互动</title>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/style.css" media="all">
+</head>
+<body>
+    <include file="Public/loading" />
+    <div class="container">
+        <div class="main project">
+            <div class="title">
+                <div class="logo"></div>
+                <span>创新</span>de案例
+            </div>
+            <div class="list clearfix">
+				<volist name="data" id="data">
+                <a class="line" href="<?php echo U('Project/detail?id='.$data['id']);?>" onclick="link({$data.id})">
+                    <img src="__ROOT__/Uploads/anli/{$data.img}" width="100%">
+                    <span>{$data.title}</span>
+                </a>
+				</volist>
+            </div>
+            <div class="look_more"><a href="javascript:more()">查看更多</a></div>
+        </div>
+        <include file="Public/menu" />
+    </div>
+    <script type="text/javascript" src="__ROOT__/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="__ROOT__/js/minisite.js"></script>
+    <script type="text/javascript">
+		function more(){
+			$.ajax({
+				url: "{:U('Project/more')}",
+				success: function(files){
+					for(var i=0;i<files.length;i++){
+						$('.list').append("<a class='line' href='"+files[i].link+"' onclick='link("+files[i].id+")'><img src='__ROOT__/Public/images/"+files[i].img+"' width='100%'><span>"+files[i].title+"</span></a>");
+					}
+				}
+			});
+			$('.look_more').css({display:'none'});
+		}
+		function link(id){
+			$.ajax({
+				type: 'POST',
+				url: "{:U('Project/many')}",
+				data: "id="+id,
+				success: function(m){
+					console.log(m);
+				}
+			});
+		}
+        FCAPP.Common.hideLoading();
+        $(function(){
+            $('.menu_btn').click(function(event) {
+                /* Act on the event */
+                $('.menu_panel').toggleClass('hide');
+                $(this).toggleClass('active');
+                $('.bt-menu div').removeClass('bt_bg');
+                $('.contact').addClass('hide');
+            }); 
+            $('.bt-menu a').click(function(event) {
+                /* Act on the event */
+                $('.bt-menu div').removeClass('bt_bg');
+                $(this).parent().addClass('bt_bg');
+            });
+            $('#contact a').click(function(event) {
+                /* Act on the event */
+                $('.contact').removeClass('hide');
+            });
+			$.ajax({
+				url: "{:U('Project/morelink')}",
+				success: function(d){
+					if(d.count<=6){
+						$('.look_more').css({display:'none'});
+					}else{
+						$('.look_more').css({display:'block'});
+					}
+				}
+			});
+        });
+    </script>
+</body>
+</html>

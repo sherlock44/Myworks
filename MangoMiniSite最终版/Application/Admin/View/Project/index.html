@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <meta charset="utf-8" />
+    <title>系统后台</title>
+    <link rel="stylesheet" href="__ROOT__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__ROOT__/css/admin.css">
+</head>
+<body>
+    <include file="Public/header" />
+    <div class="container-fluid" id="content">
+        <div id="left">
+            <div class="subnav">
+                <div class="subnav-title">
+                    <a href="#" class='toggle-subnav'>
+                        <i class="fa fa-angle-down"></i>
+                        <span>快捷导航</span>
+                    </a>
+                </div>
+                <ul class="subnav-menu">
+                    <li class='active'>
+                        <a href="{:U('Project/index')}">芒果案例</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Project/add')}">添加案例</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="pull-left">
+                        <h1>芒果案例</h1>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="minitiles">
+                            <li class='green'>
+                                <a href="{:U('Project/add')}">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="#">内容</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="{:U('Project/index')}">芒果案例</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-title"></div>
+                            <div class="box-content nopadding">
+                                <table class="table table-hover table-nomargin table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:50px">#</th>
+                                            <th>标题</th>
+                                            <th style="width:300px">文章内容</th>
+                                            <th style="width:200px">连接地址</th>
+											<th style="width:200px">发布时间</th>
+                                            <th style="width:100px">浏览量</th>
+                                            <th style="width:150px">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <volist name="data" id="data">
+                                        <tr>
+                                            <td>{$data.id}</td>
+                                            <td>{$data.title}</td>
+                                            <td>{$data.content}</td>
+                                            <td><a href="{$data.link}">{$data.link}</a></td>
+                                            <td>{:date('Y-m-d H:i:s',$data[cTime])}</td>
+                                            <td>{$data.many}</td>
+                                            <td>
+                                                <a href="{:U('Project/edit',array('id'=>$data[id]))}">编辑</a>
+                                                <a href="{:U('Project/delete',array('id'=>$data[id]))}" onclick="return confirm('您确认要删除吗？')">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </table>
+                                <div class="pagination">
+                                    {$pager}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="Public/footer" />
+</body>
+</html>

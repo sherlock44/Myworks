@@ -1,0 +1,111 @@
+.intro{
+    background: url(../images/js.png) no-repeat center center;
+    background-size: 100% auto;
+    width: 100%;
+    height: 100%;
+    .center{
+        position: relative;
+        top: 5%;
+        left: 50%;
+        width: 200px;
+        margin-left: -100px;
+    }
+    .title{
+        font-size: 22px;
+        color: #59A3FF;
+        padding-top: 28%;
+        padding-bottom: 10px;
+        width: 100%;
+        font-weight: bold;
+        position: relative;
+        text-align: center;
+        span{
+            display: block;
+            background: url(../images/js_zi.png) no-repeat center center;
+            background-size: 96px 23px;
+            width: 96px;
+            height: 33px;
+            position: absolute;
+            left: 50%;
+            margin-top: 10px;
+            margin-left: -48px;
+            border-top: 1px solid #59A3FF;
+            border-bottom: 1px solid #59A3FF;
+            padding: 5px 0;
+        }
+    }
+    .link{        
+            position: relative;
+            left: 50%;
+            margin-left: -75px;
+            text-align: center;
+            top: 80px;            
+            width: 150px;
+        a{
+            background: #fff;
+            height: 35px;
+            line-height: 35px;
+            color: #333;
+            width: 150px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .active{
+            background: #59A3FF;
+            color: #fff;
+        }
+    }
+}
+
+.aboutus{
+    .topbar{
+        position: fixed;
+        top: 0;
+        height: 60px;
+        width: 100%;
+        background: #e5e5e5;
+    }
+    .title{
+        font-size: 22px;
+        color: #59A3FF;
+        padding-top: 20%;
+        padding-bottom: 20px;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        span{            
+            font-weight: bold;
+        }
+    }
+    .content{
+        padding: 0 15px;
+        margin-bottom: 30px;
+        h3{
+            margin-bottom: 25px;
+            text-align: center;
+            span{
+                font-size: 16px;
+                border-top: 1px solid #333;
+                border-bottom: 1px solid #333;
+                padding: 3px 2px;
+                font-weight: bold;
+                color: #333;
+            }
+        }
+        p{
+            margin-top: 10px;
+            line-height: 20px;
+        }
+
+    }
+}
+
+.recruit{
+    background: #D6DDE7;
+    height: 100%;
+    width: 100%;
+    div{
+        position: absolute;
+        bottom: 0;
+    }
+}

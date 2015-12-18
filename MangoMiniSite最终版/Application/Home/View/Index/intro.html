@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>芒果介绍</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="all">
+</head>
+<body>
+    <include file="Public/loading" />
+    <div class="container">
+        <div class="main intro">
+            <div class="logo"></div>
+            <div class="center">
+                <div class="title">芒果介绍<span></span></div>
+                <div class="link">
+                    <a href="{:U('Index/aboutus')}">为什么选择芒果</a>
+                    <a href="{:U('Index/hr')}">精英de招募</a>
+                    <a href="javascript:contact()">联系我们</a>
+                </div>
+            </div>
+        </div>
+        <include file="Public/menu" />
+    </div>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/minisite.js"></script>
+    <script type="text/javascript">
+
+        FCAPP.Common.hideLoading();
+
+        $(function(){
+            $('.menu_btn').click(function(event) {
+                /* Act on the event */
+                $('.menu_panel').toggleClass('hide');
+                $(this).toggleClass('active');
+                $('.bt-menu div').removeClass('bt_bg');
+                $('.contact').addClass('hide');
+            }); 
+            $('.bt-menu a').click(function(event) {
+                /* Act on the event */
+                $('.bt-menu div').removeClass('bt_bg');
+                $(this).parent().addClass('bt_bg');
+            });
+            $('#contact a').click(function(event) {
+                /* Act on the event */
+                $('.contact').removeClass('hide');
+            });
+        });
+
+        function contact(){
+            $('.menu_btn').trigger('click');
+            $('.bt-menu a:last').trigger('click');
+            $('#contact a').trigger('click');
+        }
+    </script>
+</body>
+</html>

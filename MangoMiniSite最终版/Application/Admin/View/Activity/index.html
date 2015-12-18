@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <meta charset="utf-8" />
+    <title>系统后台</title>
+    <link rel="stylesheet" href="__ROOT__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__ROOT__/css/admin.css">
+</head>
+<body>
+    <include file="Public/header" />
+    <div class="container-fluid" id="content">
+        <div id="left">
+            <div class="subnav">
+                <div class="subnav-title">
+                    <a href="#" class='toggle-subnav'>
+                        <i class="fa fa-angle-down"></i>
+                        <span>快捷导航</span>
+                    </a>
+                </div>
+                <ul class="subnav-menu">
+                    <li class='active'>
+                        <a href="{:U('Activity/index')}">芒果社区</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Activity/add')}">添加活动</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="pull-left">
+                        <h1>芒果社区</h1>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="minitiles">
+                            <li class='green'>
+                                <a href="{:U('Activity/add')}">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="#">内容</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="{:U('Activity/index')}">芒果社区</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-title"></div>
+                            <div class="box-content nopadding">
+                                <table class="table table-hover table-nomargin table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:50px">#</th>
+                                            <th>标题</th>
+                                            <th style="width:200px">发布时间</th>
+                                            <th style="width:100px">状态</th>
+                                            <th style="width:150px">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <volist name="data" id="item">
+                                        <tr>
+                                            <td>{$item.id}</td>
+                                            <td>{$item.title}</td>
+                                            <td>{:date('Y-m-d H:i:s',$item[created])}</td>
+                                            <td>
+                                                <if condition=" $item['status'] eq 0 ">
+                                                    <label class="label label-danger">归档</label>
+                                                <else/>
+                                                    <label class="label label-success">发布</label>
+                                                </if>
+                                            </td>
+                                            <td>
+                                                <a href="{:U('Activity/edit',array('id'=>$item[id]))}">编辑</a>
+                                                <a href="{:U('Activity/delete',array('id'=>$item[id]))}" onclick="return confirm('您确认要删除吗？')">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </table>
+                                <div class="pagination">
+                                    {$pager}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="Public/footer" />
+</body>
+</html>

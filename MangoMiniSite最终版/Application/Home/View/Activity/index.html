@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>芒果社区</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="all">
+</head>
+<body>
+    <include file="Public/loading" />
+    <div class="container">
+        <div class="main activity">
+            <div class="logo"></div>
+            <!--<div class="yellow"><a href="{:U('Activity/detail')}">英雄大起底</a></div>
+            <div class="white"><a href="{:U('Activity/detail')}">绿茶我心</a></div>
+            <div class="blue"><a href="{:U('Activity/detail')}">开学季大暴走</a></div>
+            <div class="blue_s"><a href="{:U('Activity/detail')}">最美古装</a></div>
+            <div class="white_s"><a href="{:U('Activity/detail')}">七彩花旗</a></div>-->
+            {$data}
+            <div class="start"><a href="{:U('Activity/lists')}"><b></b></a></div>
+        </div>
+        <include file="Public/menu" />
+    </div>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/minisite.js"></script>
+    <script type="text/javascript">
+
+        FCAPP.Common.hideLoading();
+
+        $(function(){
+            $('.menu_btn').click(function(event) {
+                /* Act on the event */
+                $('.menu_panel').toggleClass('hide');
+                $(this).toggleClass('active');
+                $('.bt-menu div').removeClass('bt_bg');
+                $('.contact').addClass('hide');
+            }); 
+            $('.bt-menu a').click(function(event) {
+                /* Act on the event */
+                $('.bt-menu div').removeClass('bt_bg');
+                $(this).parent().addClass('bt_bg');
+            });
+            $('#contact a').click(function(event) {
+                /* Act on the event */
+                $('.contact').removeClass('hide');
+            });
+        });
+    </script>
+</body>
+</html>

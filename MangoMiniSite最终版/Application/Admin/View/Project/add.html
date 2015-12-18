@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <meta charset="utf-8" />
+    <title>系统后台</title>
+    <link rel="stylesheet" href="__ROOT__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__ROOT__/css/admin.css">
+    <link rel="stylesheet" href="__ROOT__/js/artDialog/skins/default.css">
+    
+</head>
+<body>
+    <include file="Public/header" />
+    <div class="container-fluid" id="content">
+        <div id="left">
+            <div class="subnav">
+                <div class="subnav-title">
+                    <a href="#" class='toggle-subnav'>
+                        <i class="fa fa-angle-down"></i>
+                        <span>快捷导航</span>
+                    </a>
+                </div>
+                <ul class="subnav-menu">
+                    <li>
+                        <a href="{:U('Project/index')}">芒果案例</a>
+                    </li>
+                    <li class='active'>
+                        <a href="{:U('Project/add')}">添加案例</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="pull-left">
+                        <h1>芒果案例</h1>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="minitiles">
+                            <li class='grey'>
+                                <a href="{:U('Project/index')}">
+                                    <i class="glyphicon glyphicon-list"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="#">内容</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="{:U('Project/index')}">芒果案例</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="{:U('Project/add')}">添加</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box box-bordered">
+                            <div class="box-title">
+                                <h3>
+                                    <i class="fa fa-pencil-square-o"></i>
+                                    添加案例
+                                </h3>
+                            </div>
+                            <div class="box-content nopadding">
+                                <form action="__URL__/insert" method="POST" class="form-horizontal form-bordered" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="title" class="control-label col-sm-2">标题</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="title" id="title" placeholder="标题" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pic" class="control-label col-sm-2">缩略图</label>
+                                        <div class="col-sm-5">
+                                            <input type='text' name='img' readonly id='pic' value='' class="form-control" />
+                                        </div>
+                                        <div class="col-sm-5">
+											<input id="imgfile" type="file" name="imgfile" style="display:none"/>
+                                            <input type='button' class='btn' onclick="imageupload()" value='上传图片' />
+                                            <span class="label label-primary">图片大小：374x130</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="link" class="control-label col-sm-2">文章内容</label>
+                                        <div class="col-sm-10">
+                                            <textarea id="formcontent" type="text" name="content" class="form-control" style="height:120px"></textarea>
+                                        </div>
+                                    </div>
+									<div class="form-group">
+                                        <label for="link" class="control-label col-sm-2">链接地址</label>
+                                        <div class="col-sm-10">
+                                            <input id="link" type="text" name="link" id="link" placeholder="链接地址" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">&nbsp;&nbsp;发布&nbsp;&nbsp;</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="Public/footer" />
+	<script type="text/javascript">
+		$('form').submit(function(){
+			var flag = true;
+			if($('#title').val()==""){
+				alert('没填写标题');
+				return false;
+			}
+			if($('#imgfile').val()==""){
+				alert('没选择图片');
+				return false;
+			}
+			if($('#formcontent').val()==""){
+				alert('没有内容');
+				return false;
+			}
+			if(!flag){
+				return false;
+			}
+		});
+		$('#imgfile').change(function(){
+			$('#pic').val($('#imgfile').val());
+		});
+	</script>
+    <script type="text/javascript" src="__ROOT__/js/artDialog/artDialog.js"></script>
+    <script type="text/javascript" src="__ROOT__/js/artDialog/iframeTools.js"></script>
+</body>
+</html>

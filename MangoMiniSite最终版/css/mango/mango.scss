@@ -1,0 +1,37 @@
+@charset "UTF-8";
+// 提供所有的基础功能包括：变量设置，css3前缀填充，@media，基础mixin，栅格化grid，reset样式
+// 全局参数
+@import "base/setting";
+// css3前缀填充
+@import "helpers/css3";
+// @media
+@import "helpers/media-queries";
+// 基础mixin
+@import "helpers/mixin";
+// 栅格化grid
+@import "helpers/grid";
+// reset样式
+@import "base/reset";
+
+// 组件
+// 动画库
+@import "components/animate/attention-seekers";
+@import "components/animate/bounce";
+@import "components/animate/fade";
+@import "components/animate/flip";
+@import "components/animate/lightspeed";
+@import "components/animate/rotate";
+@import "components/animate/slide";
+@import "components/animate/special";
+// 图标库
+//@import "components/font-face/font-face";
+// 按钮
+@import "components/btn";
+// 消息框
+@import "components/message";
+// 文章排版
+@import "components/typography";
+
+// 辅助类
+@import "helpers/helper";
+

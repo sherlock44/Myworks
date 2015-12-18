@@ -1,0 +1,56 @@
+.project {
+    margin: 0 25px;
+    .title {
+        font-size: 20px;
+        color: #59A3FF;
+        padding-top: 55px;
+        padding-bottom: 10px;
+        background: #e5e5e5;
+        position: fixed;
+        width: 100%;
+
+        .logo{
+            left: 0;
+        }
+        span {
+            font-weight: bold;
+        }
+    }
+    .list {
+        width: 100%;
+        padding-top: 95px;
+        .line {
+            float: left;
+            background: #fff;
+            border-radius: 2px;
+            width: 47%;
+            margin-right: 15px;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: block;
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+            span {
+                display: block;
+                text-align: center;
+                font-size: 14px;
+                padding-top: 5px;
+            }
+        }
+    }
+    .look_more{
+        a{
+            display: block;
+            background: #59A3FF;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+    }
+}

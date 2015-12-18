@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>芒果介绍</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="all">
+</head>
+<body>
+    <include file="Public/loading" />
+    <div class="container">
+        <div class="main aboutus">
+            <div class="topbar">
+                <div class="logo"></div>
+            </div>
+            <div class="title">
+                <span>芒果</span>简介
+            </div>
+            <div class="content">
+                <h3><span>我们是谁?</span></h3>
+                <p>芒果互动全称成都芒果互动文化传播有限公司，是一家致力于在中国市场提供互联网战略营销顾问服务的专业代理机构。<p>
+                <p>公司建立于 2008 年。从 2010 年起，芒果互动转型为一家全面针对互动市场提供服务的专业机构。在过去的几年中，我们和中国互联网及互联网广告市场一起获得高速的增长，做为成都首家互动机构，我们服务于一批成都乃至中国各个行业中最领先的客户，并帮助他们在 e-Marketing 领域获得不断成功。我们凭借对消费者生活方式和数字生活环境的深刻理解，我们为产品量身定制创新、实效的数字整合营销方案。<p>
+                <p>我们与中国各行业和领域数百家数字媒体展开合作，并长期成为其中一些最重要媒体的重要伙伴。</p>
+            </div>
+            <div class="content">
+                <h3><span>我们做什么?</span></h3>
+                <p>● 网络公关：网络新闻发布、论坛营销、微博营销、SNS 营销、网络活动等。</p>
+                <p>● 事件策划：创意策划、文案撰写、多媒体整合传播、舆情监控、危机控制。</p>
+                <p>● 危机公关：即时危机解决方案、网络舆论引导、网媒公关协调、搜索 seo 危机处理。</p>
+                <p>● 广告服务：网络广告策划与创意、平\网媒发布、投放监控、效果分析与建议。</p>
+            </div>
+        </div>
+        <include file="Public/menu" />
+    </div>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/minisite.js"></script>
+    <script type="text/javascript">
+
+        FCAPP.Common.hideLoading();
+
+        $(function(){
+            $('.menu_btn').click(function(event) {
+                /* Act on the event */
+                $('.menu_panel').toggleClass('hide');
+                $(this).toggleClass('active');
+                $('.bt-menu div').removeClass('bt_bg');
+                $('.contact').addClass('hide');
+            }); 
+            $('.bt-menu a').click(function(event) {
+                /* Act on the event */
+                $('.bt-menu div').removeClass('bt_bg');
+                $(this).parent().addClass('bt_bg');
+            });
+            $('#contact a').click(function(event) {
+                /* Act on the event */
+                $('.contact').removeClass('hide');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <meta charset="utf-8" />
+    <title>系统后台</title>
+    <link rel="stylesheet" href="__ROOT__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__ROOT__/css/admin.css">
+    <link rel="stylesheet" href="__ROOT__/js/artDialog/skins/default.css">
+    
+</head>
+<body>
+    <include file="Public/header" />
+    <div class="container-fluid" id="content">
+        <div id="left">
+            <div class="subnav">
+                <div class="subnav-title">
+                    <a href="#" class='toggle-subnav'>
+                        <i class="fa fa-angle-down"></i>
+                        <span>快捷导航</span>
+                    </a>
+                </div>
+                <ul class="subnav-menu">
+                    <li class='active'>
+                        <a href="{:U('Admin/edit')}">修改密码</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="pull-left">
+                        <h1>密码修改</h1>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="minitiles">
+                            <li class='grey'>
+                                <a href="{:U('Admin/edit')}">
+                                    <i class="glyphicon glyphicon-list"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="#">管理员管理</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="{:U('Admin/edit')}">密码修改</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box box-bordered">
+                            <div class="box-title">
+                                <h3>
+                                    <i class="fa fa-pencil-square-o"></i>
+                                    修改密码
+                                </h3>
+                            </div>
+                            <div class="box-content nopadding">
+                                <form action="{:U('Admin/update')}" id="updateform" method="POST" class="form-horizontal form-bordered">
+                                    <div class="form-group">
+                                        <label for="title" class="control-label col-sm-2">账号</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" readonly value="{$adminInfo.username}" name="username" id="username" placeholder="账号" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="project" class="control-label col-sm-2">旧密码</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" name="oldpassword" id="oldpassword" placeholder="旧密码" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="client" class="control-label col-sm-2">新密码</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" name="password" id="password" placeholder="新密码" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="client" class="control-label col-sm-2">确认密码</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" name="repassword" id="repassword" placeholder="再次输入新密码" class="form-control">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-actions col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">&nbsp;&nbsp;保存&nbsp;&nbsp;</button>
+                                        <button type="button" class="btn">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="Public/footer" />
+    <script type="text/javascript" src="__ROOT__/js/artDialog/artDialog.js"></script>
+    <script type="text/javascript" src="__ROOT__/js/artDialog/iframeTools.js"></script>
+    <script type="text/javascript">
+	$(function(){
+		$('#updateform').validate({
+			rules:{
+				oldpassword:{
+					required: true,
+					minlength: 5
+					},
+				password:{
+					required: true,
+					minlength: 5
+					},
+				repassword:{
+					required: true,
+					minlength: 5,
+					equalTo: "#password"
+					}
+				}
+			});
+		});
+    </script>
+</body>
+</html>

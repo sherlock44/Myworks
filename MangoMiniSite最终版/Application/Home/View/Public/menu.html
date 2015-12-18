@@ -1,0 +1,42 @@
+<div class="top_menu">
+        <if condition="(CONTROLLER_NAME neq 'Index') OR (ACTION_NAME neq 'index')">
+            <a class="back" href="javascript:history.go(-1);"><span class="icon-back"></span></a>
+        </if>
+            <a class="menu_btn" href="javascript:void(0);"><span class="icon-menu"></span><span class="icon-close"></span></a>
+        </div>
+<div class="menu_panel hide">
+    <div class="bt-menu">
+        <div>
+            <a href="{:U('Index/index')}">
+                <span>HOME</span>
+            </a>
+        </div>
+        <div>
+            <a href="{:U('Project/index')}">
+                <span>芒果案例</span>
+            </a>
+        </div>
+        <div>
+            <a href="{:U('Activity/index')}">
+                <span>芒果社区</span>
+            </a>
+        </div>
+        <div>
+            <a href="{:U('Index/intro')}">
+                <span>芒果介绍</span>
+            </a>
+        </div>
+        <div id="contact">
+            <a href="javascript:void(0)">
+                <span>联系我们</span>
+            </a>
+        </div>
+    </div>
+    <div class="contact hide">
+        <div class="left">
+            <a class="weibo" href="http://weibo.com/mangool"><span class="icon-weibo"></span></a>
+            <a class="map" href="http://api.map.baidu.com/marker?location=30.652856,104.1052&title=成都芒果互动文化传播有限公司&content=地址：水碾河南三街37号U37创意仓库9栋4楼 电话：(028)64659878&output=html&src=成都芒果互动文化传播有限公司|成都芒果互动文化传播有限公司"><span class="icon-map"></span></a>
+            <a class="phoneweibo" href="tel:02864653108"><span class="icon-phone"></span></a>
+        </div>
+    </div>
+</div>
