@@ -1,0 +1,320 @@
+@charset "utf-8";
+body {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: "Microsoft Yahei", Helvetica;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.content {
+    background: url(../images/Mickey.jpg) no-repeat center center;
+    background-size: 100%;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    .logo {
+        background: url(../images/logo.png) no-repeat top center;
+        background-size: 48px 53px;
+        width: 48px;
+        height: 53px;
+        position: absolute;
+        top: -2px;
+        left: 10%;
+    }
+    .join {
+        background: url(../images/Button.png) no-repeat top center;
+        background-size: 150px 57px;
+        width: 150px;
+        height: 57px;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        margin-left: -125px;
+        display: block;
+    }
+    .rule {
+        background: url(../images/Button1.png) no-repeat top center;
+        background-size: 95px 44px;
+        width: 95px;
+        height: 44px;
+        position: absolute;
+        left: 50%;
+        bottom: 7%;
+        margin-left: 20px;
+    }
+}
+#fullbg {
+    background-color: #000;
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+}
+#dialog {
+    width: 270px;
+    height: 260px;
+    background: #fff9a1;
+    border-radius: 8px;
+    top: 20%;
+    left: 50%;
+    margin-left: -145px;
+    //overflow-y: auto;
+    // -webkit-overflow-scrolling: touch;
+    word-wrap: break-word;
+    padding: 1px;
+    //position: fixed; /* 浮动对话框 */
+    position: absolute;
+    z-index: 50;
+    border-radius: 5px;
+    display: none;
+    padding: 0 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    .btn {
+        background: url(../images/arrow.png) no-repeat center center;
+        background-size: 23px 28px;
+        width: 23px;
+        height: 28px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+    .text {
+        width: 270px;
+        height: 260px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        div, span {
+            text-align: left;
+            display: block;
+        }
+        div {
+            color: #ff3736;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        span {
+            color: #666;
+            font-size: 14px;
+        }
+        p {
+            color: #ff3736;
+            font-size: 14px;
+            text-align: left;
+            span {
+                display: block;
+                color: #ff3736;
+                font-size: 12px;
+            }
+        }
+    }
+}
+.center {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    .top {
+        width: 100%;
+        height: 104px;
+        background: #ff4b6d;
+        span {
+            background: url(../images/biao.png) no-repeat center center;
+            background-size: 314px 104px;
+            width: 314px;
+            height: 104px;
+            position: absolute;
+            left: 50%;
+            margin-left: -157px;
+            top: 0;
+        }
+    }
+    .item {
+        line-height: 24px;
+        .title {
+            background: #ccc;
+            padding-left: 15px;
+            color: #333;
+            span {
+            }
+            a {
+                float: right;
+                font-size: 26px;
+                padding-right: 15px;
+                color: #333;
+            }
+        }
+        .list {
+            margin-bottom: 15px;
+            .col {
+                margin: 0 15px;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+                .img {
+                    float: left;
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 50%;
+                    background: #999 url(../images/yestone.jpg) no-repeat center;
+                    background-size: 85px 70px;
+                    position: relative;
+                    margin: 10px 0;
+                    span {
+                        background-size: 30px 29px;
+                        width: 30px;
+                        height: 29px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: #fff;
+                        text-align: left;
+                        font-size: 10px;
+                    }
+                    .red {
+                        background: url(../images/block.png) no-repeat center center;
+                    }
+                    .orange {
+                        background: url(../images/block1.png) no-repeat center center;
+                    }
+                    .oranges {
+                        background: url(../images/block3.png) no-repeat center center;
+                    }
+                    .gray {
+                        background: url(../images/block2.png) no-repeat center center;
+                    }
+                }
+                .text {
+                    float: left;
+                    text-align: left;
+                    margin-left: 10px;
+                    font-size: 14px;
+                    padding-top: 20px;
+                    span {
+                        display: block;
+                        font-size: 12px;
+                        color: #999;
+                        line-height: 16px;
+                    }
+                }
+                .tic {
+                    float: right;
+                    line-height: 30px;
+                    font-size: 14px;
+                    border-left: 1px solid #ccc;
+                    padding-left: 20px;
+                    height: 30px;
+                    margin-top: 25px;
+                    .btn {
+                        display: block;
+                        color: #666;
+                    }
+                    .active {
+                        display: block;
+                        color: #333;
+                        span {
+                            background: url(../images/good.png) no-repeat center center;
+                            background-size: 15px 14px;
+                            width: 15px;
+                            height: 14px;
+                            display: block;
+                            float: left;
+                            margin-top: 7px;
+                            padding-right: 5px;
+                        }
+                    }
+                    .img {
+                        background: url(../images/good1.png) no-repeat center center;
+                        background-size: 15px 14px;
+                        width: 15px;
+                        height: 14px;
+                        display: block;
+                        float: left;
+                        margin-top: 7px;
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+#bg{ 
+    background-color:#000; 
+    left:0; 
+    opacity:0.9; 
+    position:fixed; 
+    top:0; 
+    z-index:3; 
+    filter:alpha(opacity=90); 
+    -moz-opacity:0.9; 
+    -khtml-opacity:0.9; 
+} 
+#write {
+    width: 230px;
+    height: 90px;
+    background: #fff;
+    border-radius: 8px;
+    overflow:hidden;
+    position: fixed;
+    left: 50%;
+    margin-left: -115px;
+    top: 50%;
+    margin-top: -45px;
+    display: none;
+    z-index: 100;
+    padding-top: 5px;
+    a{
+        position: absolute;
+        right: 0;
+        top: -5px;
+        font-size: 22px;
+        color: #999;
+    }
+    label{
+        display: block;
+        border-bottom: 1px solid #ccc;
+        line-height: 30px;
+        padding: 10px;
+        font-size: 14px;
+        input{
+            border: none;
+            outline: none;
+        }
+    }
+    button{
+        display: block;
+        width: 100%;
+        line-height: 26px;
+        text-align: center;
+        outline: none;
+        border: none;
+        background: #fff;
+        font-size: 16px;
+    }
+}
