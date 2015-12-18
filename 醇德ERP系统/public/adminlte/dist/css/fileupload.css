@@ -1,0 +1,82 @@
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.btn-file>input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  font-size: 23px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transform: translate(-300px, 0) scale(4);
+  direction: ltr;
+}
+
+.fileupload .uneditable-input {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  cursor: text
+}
+
+.fileupload .thumbnail {
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  vertical-align: middle;
+  padding: 3px;
+  border-color: #d2d6de;
+}
+
+.has-error .thumbnail{
+  border-color: #dd4b39;
+}
+
+.has-success .thumbnail{
+  border-color: #00a65a;
+}
+
+.has-warning .thumbnail{
+  border-color: #f39c12;
+}
+
+.fileupload .thumbnail>img {
+  display: inline-block;
+  max-height: 100%;
+  vertical-align: middle
+}
+
+.fileupload .btn {
+  vertical-align: middle
+}
+
+.fileupload-exists .fileupload-new,.fileupload-new .fileupload-exists {
+  display: none
+}
+
+.fileupload-inline .fileupload-controls {
+  display: inline
+}
+
+.thumbnail-borderless .thumbnail {
+  padding: 0;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none
+}
+
+.fileupload-new.thumbnail-borderless .thumbnail {
+  border: 1px solid #ddd;
+}

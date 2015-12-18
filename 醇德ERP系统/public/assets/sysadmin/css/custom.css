@@ -1,0 +1,17 @@
+/*
+ * custom style
+ */
+ .cust_font_red{
+    color: #FF0000;
+ }
+
+ .cust_fs_24{
+  font-size: 24px;
+ }
+ .cust_fs_20{
+  font-size: 20px;
+ }
+
+ .cust_fb{
+  font-weight: bold;
+ }

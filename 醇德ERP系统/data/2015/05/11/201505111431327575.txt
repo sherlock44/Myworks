@@ -1,0 +1,8 @@
+测试网址：test.musilin.net.cn
+
+测试FTP地址：test.musilin.net.cn
+FTP用户：test.duost.com
+FTP密码：testadmind!@
+数据库 http://musilin.net.cn/sql/ 
+portal
+portal123!@#
