@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <title>全球绿地</title>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/animate.css"/>
+</head>
+<body>
+    <div class="main page1">
+        <a class="back" href="javascript:history.go(-1);"></a>
+<!--         <div class="bg">
+            <div class="text">
+                <div class="logo"></div>
+                <div class="s1"></div>
+            </div>
+            <span class="blocks"><b></b></span>
+        </div>
+        <div class="bg1">
+            <div class="logo"></div>
+            <div class="btns">
+                <a class="btn1 animated flash" href="page1_2.html" title=""></a>
+                <a class="btn2 animated flash" href="page1_3.html" title=""></a>
+                <a class="btn3 animated flash" href="page1_1.html" title=""></a>
+                <a class="btn4 animated flash" href="page1_4.html" title=""></a>
+                <a class="btn5 animated flash" href="page1_5.html" title=""></a>
+            </div>
+        </div> -->
+
+        <div class="wrap" id="scene">
+        <div class="sec">
+            <section class="sec01">
+                <div class="bg">
+                    <div class="text">
+                    <div class="logo"></div>
+                    <div class="s1"></div>
+            </div>
+            <span class="blocks"><b></b></span>
+        </div>
+            </section>
+
+            <section class="sec02 hide">
+                <div class="bg">
+                    <div class="logo"></div>
+                    <div class="btns">
+                        <a class="btn1 animated fadeInRight" href="{:U('Index/page1_2')}" title=""></a>
+                        <a class="btn2 animated fadeInRight" href="{:U('Index/page1_3')}" title=""></a>
+                        <a class="btn3 animated fadeInRight" href="{:U('Index/page1_1')}" title=""></a>
+                        <a class="btn4 animated fadeInRight" href="{:U('Index/page1_4')}" title=""></a>
+                        <a class="btn5 animated fadeInRight" href="{:U('Index/page1_5')}" title=""></a>
+                </div>
+            </div>
+            </section>                   
+        </div>
+    </div>
+    </div>
+    <script src="__ROOT__/js/zepto.min.js"></script>
+    <script type="text/javascript">
+        
+        $(function(){
+        // 翻转的绑定
+        window.onorientationchange = orientationChange;
+        function initPage(){
+            pageWidth = $(window).width();
+            pageHeight = $(window).height();
+            pages = $(".wrap section");
+
+            $(".wrap section,.wrap").css({
+                "width":pageWidth+"px",
+                "height":pageHeight+"px"
+            });
+
+
+            secHeight = pageHeight * $(".wrap section").length;
+            lineHeight = 832 * secHeight / pageHeight;
+
+            // animatePage(curPage);
+            $('#scene').on('touchstart', function (e) {
+                e = e.changedTouches[0];
+                onStart(e);
+            });
+
+            $('#scene').on('touchmove', function (e) {
+                onMove(e.changedTouches[0], e);
+            });
+
+            $('#scene').on('touchend', function (e) {
+                onEnd(e.changedTouches[0]);
+            });
+
+            $("#scene .sec").css("-webkit-transform", "matrix(1, 0, 0, 1, 0, 0)");
+            $(pages[curPage]).addClass("sec0" + (curPage+1) + "_show");
+        }
+
+        function orientationChange(){
+            //initPage();
+            alert("请竖屏查看页面，效果更佳");
+        }
+
+        // 以下是拖动效果
+        var startX = 0,
+            startY = 0;
+            margin = 0;
+        var pages = null;
+        var curPage = 0;
+        var pageWidth = 0,
+            pageHeight = 0;
+        var lineHeight = 0, secHeight = 0;
+        var targetElement = null;
+        var scrollPrevent = false, movePrevent = false, touchDown = false;
+
+        $(document).ready(function(){
+            initPage();
+        });
+
+        function onStart (e) {
+            if(movePrevent == true){
+                event.preventDefault();
+                return false;
+            }
+            touchDown = true;
+
+            // 起始点，页面位置
+            startX = e.pageX;
+            startY = e.pageY;
+
+            margin = $(".sec").css("-webkit-transform");
+            //margin = "matrix(1, 0, 0, 1, 0, -50)";
+            margin = margin.replace("matrix(", "");
+            margin = margin.replace(")", "");
+            margin = margin.split(",");
+            margin = parseInt(margin[5]);
+        }
+
+        function onMove (e, oe) {
+            if(movePrevent == true || touchDown != true){
+                event.preventDefault();
+                return false;
+            }
+            event.preventDefault();
+            if( scrollPrevent==false && e.pageY!=startY){
+                var temp = margin + e.pageY - startY;
+                $(".sec").css("-webkit-transform", "matrix(1, 0, 0, 1, 0, "+temp+")");
+            }
+        }
+
+        function onEnd (e) {
+            if(movePrevent == true){
+                event.preventDefault();
+                return false;
+            }
+
+            touchDown = false;
+
+            if( scrollPrevent==false ){
+                // 抬起点，页面位置
+                endX = e.pageX;
+                endY = e.pageY;
+                // swip 事件默认大于50px才会触发，小于这个就将页面归回
+                if( Math.abs(endY-startY)<=50) {
+                    animatePage(curPage);
+                }else{
+                    if(endY>startY){
+                        prevPage();
+                    }else{
+                        nextPage();
+                    }
+                }
+            }
+
+            $(".sec").removeClass("drag");
+        }
+
+        function prevPage(){
+            var newPage = curPage - 1;
+            animatePage(newPage);
+            
+        }
+        function nextPage(){
+            var newPage = curPage + 1;
+            animatePage(newPage);
+        }
+
+        function animatePage( newPage ){
+            if(newPage<0){
+                newPage = 0;
+            }
+            if(newPage>$(".wrap section").length-1){
+                newPage = $(".wrap section").length-1;
+            }
+
+            curPage = newPage;
+            var newMarginTop = newPage * (-pageHeight);
+            $(".sec").css({
+                "-webkit-transform" : "matrix(1, 0, 0, 1, 0, "+newMarginTop+")"
+            });
+
+            movePrevent = true;
+            setTimeout(function(){ 
+                movePrevent=false;
+                $("#scene .sec").css({"-webkit-transition": ""});
+
+                // 每页动画
+                if( !$(pages[curPage]).hasClass("sec0" + (curPage+1) + "_show") ){
+                    $(pages[curPage]).addClass("sec0" + (curPage+1) + "_show");
+                    $(pages[curPage]).removeClass('hide');
+                }
+                $(pages[curPage-1]).removeClass("sec0" + (curPage) + "_show").addClass('hide');
+                $(pages[curPage+1]).removeClass("sec0" + (curPage+2) + "_show").addClass('hide');
+                
+            }, 300 );
+        }
+        });
+    </script>
+    <div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b1a629793e88cbec6645243a995fcdc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+
+</body>
+</html>

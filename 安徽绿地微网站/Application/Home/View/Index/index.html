@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <title>绿地安徽</title>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/animate.css"/>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="footers">
+            <div class="bt-menu">
+                <div class="col">
+                    <a href="#" class="btn"><span>世界绿地</span></a>
+                    <div class="submenu">
+                        <a href="{:U('Index/page1')}">全球绿地</a>
+                        <a href="{:U('Index/page2')}">绿地大平台</a>
+                        <a href="{:U('Index/page7')}">时事要闻</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="#" class="btn"><span>我要买房</span></a>
+                    <div class="submenu">
+                        <a href="{:U('Index/page3')}">品牌动态</a>
+                        <a href="{:U('Index/page4')}">置业绿地</a>
+                        <a href="{:U('Index/page5')}">在线预约</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="#" class="btn"><span>我要赚钱</span></a>
+                    <div class="submenu">
+                        <a href="http://ldh.ldjt.com.cn/Welcome.aspx?PageID=1">全民经纪人</a>
+                        <a href="{:U('Index/page6')}">绿地红利</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="__ROOT__/js/jquery-1.9.1.min.js"></script>
+    <script>
+        $('.btn').on('click',function(){
+            $(this).siblings('.submenu').toggleClass('open');
+            $('.col').not($(this).parent()).find('div').removeClass('open');
+            // console.log($(this).parent());
+        })
+    </script>
+    <div style="display:none">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?5b1a629793e88cbec6645243a995fcdc";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    </div>
+
+</body>
+</html>

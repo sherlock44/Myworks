@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <title>在线预约</title>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/animate.css"/>
+</head>
+<body>
+    <div class="main">
+        <a class="back" href="javascript:history.go(-1);"></a>
+        <div class="page5">
+            <div class="logo"></div>
+            <div class="text">
+                <form action="__URL__/insert" method="POST">
+                <label><img src="__ROOT__/images/ss/s5_01.png" width="43" alt=""><input class="txt" type="text" id="name" name="name" value=""></label>
+                <label><img src="__ROOT__/images/ss/s5_02.png" width="70" alt=""><input class="txt" type="text" id="tel" name="tel" value=""></label>
+                <label><img src="__ROOT__/images/ss/s5_03.png" width="70" alt=""><input class="data" type="date" id="lt" name="lt" value=""></label>
+                <label><img src="__ROOT__/images/ss/s5_04.png" width="70" alt="">
+                    <input class="sele" type="text" name="" value="">
+                    <select id="project" name="project" hidefocus>  
+                        <option value='合肥-绿地中心'>合肥-绿地中心</option>
+                        <option value='合肥-绿地中央广场'>合肥-绿地中央广场</option>
+                        <option value='合肥-绿地新都会'>合肥-绿地新都会</option>
+                        <option value='合肥-绿地香树花城'>合肥-绿地香树花城</option> 
+                        <option value='合肥-绿地派克公馆'>合肥-绿地派克公馆</option>
+                        <option value='合肥-绿地海德公馆'>合肥-绿地海德公馆</option>
+                        <option value='安庆-绿地迎江世纪城'>安庆-绿地迎江世纪城</option>
+                        <option value='马鞍山-绿地臻城'>马鞍山-绿地臻城</option>
+                        <option value='芜湖-绿地镜湖世纪城'>芜湖-绿地镜湖世纪城</option>
+                        <option value='蚌埠-绿地迎宾城'>蚌埠-绿地迎宾城</option> 
+                        <option value='蚌埠-绿地世纪城'>蚌埠-绿地世纪城</option>
+                        <option value='蚌埠-绿地中央广场'>蚌埠-绿地中央广场</option>
+                    </select>
+                </label>
+                <input class="button" value="" type="submit">
+                <!-- <button type="button"value="提交"></button> -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="__ROOT__/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+
+        $('form').submit(function(){
+            var name = $('#name').val();
+            var tel = $('#tel').val();
+            var lt = $('#lt').val();
+            var project = $('#project').val();
+            var flag = true;
+
+            if(name==""){
+                alert("姓名不能为空");
+                flag = false;
+            }else if(tel==""){
+                alert("电话不能为空");
+                flag = false;
+            }else if(lt==""){
+                alert("请填写看房时间");
+                flag = false;
+            }else if(project==""){
+                alert("未选择项目");
+                flag = false;
+            }
+            if(!flag){
+                return false;
+            }
+        });
+
+        var pageWidth = $(window).width();
+        var pageHeight = $(window).height();
+
+        $(".page5").css({
+            "width":pageWidth+"px",
+            "height":pageHeight+"px"
+        });
+    </script>
+    <div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b1a629793e88cbec6645243a995fcdc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+
+</body>
+</html>

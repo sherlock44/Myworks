@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="edge" />
+    <meta charset="utf-8" />
+    <title>系统后台</title>
+    <link rel="stylesheet" href="__ROOT__/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__ROOT__/css/admin.css">
+</head>
+<body>
+    <include file="Public/header" />
+    <div class="container-fluid" id="content">
+        <div id="left">
+            <div class="subnav">
+                <div class="subnav-title">
+                    <a href="#" class='toggle-subnav'>
+                        <i class="fa fa-angle-down"></i>
+                        <span>快捷导航</span>
+                    </a>
+                </div>
+                <ul class="subnav-menu">
+                    <li>
+                        <a href="{:U('Index/index')}">在线预约名单</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="pull-left">
+                        <h1>在线预约名单</h1>
+                    </div>
+                </div>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="#">内容</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="{:U('Index/index')}">在线预约</a>
+                        </li>
+                    </ul>
+                </div>
+                <br />
+                <!-- <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-users fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">100</div>
+                                        <div>总量</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-share-alt fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">100</div>
+                                        <div>总量</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-database fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">100</div>
+                                        <div>总量</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-trophy fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">100</div>
+                                        <div>总量</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box box-color box-bordered">
+                            <div class="box-title">
+                                <h3>
+                                    <i class="fa fa-tachometer"></i>
+                                    系统信息
+                                </h3>
+                            </div>
+                            <div class="box-content">
+                                <table class="table table-bordered table-striped table-force-topborder">
+                                    
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-title"></div>
+                            <div class="box-content nopadding">
+                                <table class="table table-hover table-nomargin table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:50px">#</th>
+                                            <th style="width:150px">姓名</th>
+                                            <th style="width:150px">联系方式</th>
+                                            <th style="width:250px">看房时间</th>
+                                            <th style="width:300px">选择项目</th>
+                                            <th style="width:150px">提交时间</th>
+                                            <th style="width:100px">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <volist name="data" id="data">
+                                        <tr>
+                                            <td>{$data.id}</td>
+                                            <td>{$data.name}</td>
+                                            <td><a href="{$data.link}">{$data.tel}</a></td>
+                                            <td>{$data.lookTime}</td>
+                                            <td>{$data.project}</td>
+                                            <td>{:date('Y-m-d H:i:s',$data[cTime])}</td>
+                                            <td>
+                                                <!-- <a href="{:U('Project/edit',array('id'=>$data[id]))}">编辑</a> -->
+                                                <a href="{:U('Project/delete',array('id'=>$data[id]))}" onclick="return confirm('您确认要删除吗？')">删除</a>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </table>
+                                <div class="pagination">
+                                    {$pager}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <include file="Public/footer" />
+</body>
+</html>

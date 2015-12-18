@@ -1,0 +1,616 @@
+.page1 {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    overflow-x: hidden;
+
+    .bg {
+        background: url(../images/s1/bg1.jpg) no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        min-width: 320px;
+        max-width: 640px;
+        position: relative;
+        padding: 5%;
+
+        .text {
+            // position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            .logo {
+                background: url(../images/s1/logo.png);
+                background-size: 85px 25px;
+                width: 85px;
+                height: 25px;
+                position: absolute;
+                top: 7%;
+                left: 7%;
+            }
+            .s1 {
+                background: url(../images/s1/s1_01.png) no-repeat center;
+                background-size: 100%;
+                // margin: 5%;
+                width: 100%;
+                height: 100%;
+                // position: absolute;
+                top: 5%;
+            }
+        }
+    }
+    .bg1 {
+        background: url(../images/s1/bg2.jpg) no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        min-width: 320px;
+        max-width: 640px;
+        position: relative;
+        padding: 5%;
+
+        .logo {
+            background: url(../images/s1/s1_02.png) no-repeat;
+            background-size: 62px 16px;
+            width: 62px;
+            height: 16px;
+            position: absolute;
+            top: 5%;
+            left: 5%;
+        }
+        .btn1 {
+            background: url(../images/s1/s1_03.png) no-repeat;
+            background-size: 157px 65px;
+            width: 157px;
+            height: 65px;
+            position: absolute;
+            top: 10%;
+            left: 15%;
+        }
+        .btn2 {
+            background: url(../images/s1/s1_04.png) no-repeat;
+            background-size: 192px 65px;
+            width: 192px;
+            height: 65px;
+            position: absolute;
+            top: 27%;
+            left: 15%;
+        }
+        .btn3 {
+            background: url(../images/s1/s1_05.png) no-repeat;
+            background-size: 205px 65px;
+            width: 205px;
+            height: 65px;
+            position: absolute;
+            top: 44%;
+            left: 15%;
+        }
+        .btn4 {
+            background: url(../images/s1/s1_06.png) no-repeat;
+            background-size: 157px 65px;
+            width: 157px;
+            height: 65px;
+            position: absolute;
+            top: 61%;
+            left: 15%;
+        }
+        .btn5 {
+            background: url(../images/s1/s1_07.png) no-repeat;
+            background-size: 222px 65px;
+            width: 222px;
+            height: 65px;
+            position: absolute;
+            top: 78%;
+            left: 15%;
+        }
+    }
+    .num {
+        position: relative;
+        vertical-align: bottom;
+        -webkit-vertical-align: bottom;
+        display: block;
+        width: 100%;
+        min-width: 320px;
+        max-width: 640px;
+        height: auto;
+
+        .bg_top {
+            background: #fff;
+            position: relative;
+
+            img {
+                vertical-align: bottom;
+                -webkit-vertical-align: bottom;
+            }
+            span {
+                display: block;
+                background: url(../images/add.png) no-repeat center center;
+                background-size: 28px 28px;
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                top: 49%;
+                right: 6%;
+                z-index: 50;
+            }
+        }
+        .s_01 {
+            position: fixed;
+            background: rgba(0, 0, 0, .8);
+            bottom: -1000px;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+
+            .left {
+                width: 197px;
+                height: 92px;
+                line-height: 22px;
+                font-size: 12px;
+
+                .tit {
+                    display: block;
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+.blocks {
+    position: absolute;
+    left: 50%;
+    margin-left: -12px;
+    top: 94%;
+    width: 24px;
+    height: 16px;
+}
+.blocks b {
+    position: absolute;
+    left: 50%;
+    margin-left: -12px;
+    z-index: 3;
+    text-align: center;
+    background: url(../images/thing/arrow.png) no-repeat center center;
+    background-size: 24px 16px;
+    width: 24px;
+    height: 16px;
+}
+.blocks {
+    -webkit-animation: opa_btm 1.5s infinite ease-in-out;
+    animation: opa_btm 1.5s infinite ease-in-out;
+}
+@-webkit-keyframes opa_btm {
+    0%, 25% {
+        opacity: 0;
+        -webkit-transform: translate(0, -10px);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes opa_btm {
+    0%, 25% {
+        opacity: 0;
+        transform: translate(0, -10px);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.block {
+    background: url(../images/block.png);
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+.s_01_1 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80px;
+    height: 180px;
+    opacity: 0;
+    -webkit-animation-name: fadeInUpBig;
+    animation-name: fadeInUpBig;
+}
+.s_01_2 {
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    -webkit-animation-name: fadeInUpBig;
+    animation-name: fadeInUpBig;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInUpBig {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(2000px);
+        transform: translateY(2000px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUpBig {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(2000px);
+        -ms-transform: translateY(2000px);
+        transform: translateY(2000px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+.sec02 {
+    background: url(../images/bg2.jpg) no-repeat center center;
+    overflow: hidden;
+    background-size: 100% auto;
+    top: -100%;
+    right: -100%;
+}
+.star {
+    -webkit-animation: opa_bt 1.5s infinite ease-in-out;
+    animation: opa_bt 1.5s infinite ease-in-out;
+}
+@-webkit-keyframes opa_bt {
+    0%, 25% {
+        opacity: 0;
+        -webkit-transform: translate(10px, 0);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes opa_bt {
+    0%, 25% {
+        opacity: 0;
+        transform: translate(10px, 0);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.star {
+    background: url(../images/s2_01.png) no-repeat;
+    background-size: 15px 24px;
+    width: 15px;
+    height: 24px;
+    position: absolute;
+    left: 5%;
+    top: 40%;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.page3 {
+    background: url(../images/ss/bg1.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .logo {
+        background: url(../images/s1/s1_02.png) no-repeat;
+        background-size: 62px 16px;
+        width: 62px;
+        height: 16px;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+    .s3_1 {
+        background: url(../images/ss/s3_01.png);
+        background-size: 159px 60px;
+        width: 159px;
+        height: 60px;
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        margin-left: -80px;
+    }
+    .s3_2 {
+        background: url(../images/ss/s3_02.png);
+        background-size: 159px 60px;
+        width: 159px;
+        height: 60px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-left: -80px;
+    }
+    .s3_3 {
+        background: url(../images/ss/s3_03.png);
+        background-size: 159px 60px;
+        width: 159px;
+        height: 60px;
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        margin-left: -80px;
+    }
+}
+.page4 {
+    background: url(../images/ss/bg1.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .logo {
+        background: url(../images/s1/s1_02.png) no-repeat;
+        background-size: 62px 16px;
+        width: 62px;
+        height: 16px;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+    .s3_1 {
+        background: url(../images/ss/s4_01.png);
+        background-size: 221px 66px;
+        width: 221px;
+        height: 66px;
+        position: absolute;
+        top: 18%;
+        left: 40%;
+        margin-left: -80px;
+    }
+    .s3_2 {
+        background: url(../images/ss/s4_02.png);
+        background-size: 132px 65px;
+        width: 132px;
+        height: 65px;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        margin-left: -80px;
+    }
+    .s3_3 {
+        background: url(../images/ss/s4_03.png);
+        background-size: 162px 65px;
+        width: 162px;
+        height: 65px;
+        position: absolute;
+        top: 62%;
+        left: 40%;
+        margin-left: -80px;
+    }
+}
+.page5 {
+    background: url(../images/ss/bg2.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .logo {
+        background: url(../images/ss/s5_00.png) no-repeat;
+        background-size: 65px 67px;
+        width: 65px;
+        height: 67px;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+    .text {
+        width: 250px;
+        height: 160px;
+        position: absolute;
+        top: 57%;
+        left: 50%;
+        margin-left: -125px;
+        text-align: right;
+
+        label {
+            display: block;
+            line-height: 28px;
+            height: 28px;
+            position: relative;
+            margin-top: 10px;
+
+            img {
+                display: inline-block;
+                position: relative;
+                top: 10px;
+            }
+            .txt {
+                margin-left: 10px;
+                display: inline-block;
+                height: 28px;
+                line-height: 28px;
+                background: url(../images/ss/s5_05.png) no-repeat center;
+                background-size: 159px 28px;
+                width: 160px;
+                height: 28px;
+                border: none;
+                outline: none;
+                padding: 0 5px;
+            }
+            .data {
+                margin-left: 10px;
+                display: inline-block;
+                height: 28px;
+                line-height: 28px;
+                background: url(../images/ss/s5_06.png) no-repeat center;
+                background-size: 159px 28px;
+                width: 160px;
+                height: 28px;
+                border: none;
+                outline: none;
+                padding: 0 5px;
+            }
+            .sele {
+                margin-left: 10px;
+                display: inline-block;
+                height: 28px;
+                line-height: 28px;
+                background: url(../images/ss/s5_05.png) no-repeat center;
+                background-size: 159px 28px;
+                width: 160px;
+                height: 28px;
+                border: none;
+                outline: none;
+                padding: 0 5px;
+            }
+            select {
+                height: 26px;
+                width: 155px;
+                position: absolute;
+                top: 6px;
+                right: 2px;
+                line-height: 26px;
+                border: none;
+                outline: none;
+                background: none;
+            }
+        }
+    }
+}
+.page6 {
+    background: url(../images/ss/bg1.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .logo {
+        background: url(../images/s1/s1_02.png) no-repeat;
+        background-size: 62px 16px;
+        width: 62px;
+        height: 16px;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+    .s3_1 {
+        background: url(../images/ss/s6_01.png);
+        background-size: 179px 50px;
+        width: 179px;
+        height: 50px;
+        position: absolute;
+        top: 18%;
+        left: 40%;
+        margin-left: -80px;
+    }
+    .s3_2 {
+        background: url(../images/ss/s6_02.png);
+        background-size: 179px 50px;
+        width: 179px;
+        height: 50px;
+        position: absolute;
+        top: 36%;
+        left: 40%;
+        margin-left: -80px;
+    }
+    .s3_3 {
+        background: url(../images/ss/s6_03.png);
+        background-size: 142px 50px;
+        width: 142px;
+        height: 50px;
+        position: absolute;
+        top: 54%;
+        left: 40%;
+        margin-left: -80px;
+    }
+    .s3_4 {
+        background: url(../images/ss/s6_04.png);
+        background-size: 102px 50px;
+        width: 102px;
+        height: 50px;
+        position: absolute;
+        top: 72%;
+        left: 40%;
+        margin-left: -80px;
+    }
+}
+.page6_1 {
+    img {
+        vertical-align: bottom;
+        -webkit-vertical-align: bottom;
+    }
+    .img{
+        position: relative;
+        display: block;
+    }
+    .btns{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        div{
+            width: 100%;
+            height: 40%;
+            position: absolute;
+            top: 33%;
+            padding: 5%;
+            a{
+                display: block;
+                height: 15%;
+                width: 100%;
+                margin-top: 8%;
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+.page6_3{
+    background: url(../images/ss/bg6_3_1.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 5%;
+    .logo {
+        background: url(../images/s1/s1_02.png) no-repeat;
+        background-size: 62px 16px;
+        width: 62px;
+        height: 16px;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+    .img {
+        background: url(../images/ss/s6_05.png) no-repeat center center;
+        background-size: 100%;
+        width: 100%;
+        height: 100%;
+    }
+}

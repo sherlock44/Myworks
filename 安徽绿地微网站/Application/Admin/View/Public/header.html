@@ -1,0 +1,57 @@
+<div id="navigation">
+        <div class="container-fluid">
+            <a href="#" id="brand"><img src="__ROOT__/images/logo.png" height="24px" /></a>
+            <a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul class='main-nav'>
+                <if condition="MODULE_NAME eq 'Index'">
+                <li class='active'>
+                <else />
+                <li>
+                </if>
+                    <a href="{:U('Index/index')}">
+                        <span>在线预约</span>
+                    </a>
+                </li>
+
+                <if condition="MODULE_NAME eq 'Project'">
+                <li class='active'>
+                <else />
+                <li>
+                </if>
+                    <a href="{:U('Project/index')}">
+                        <span>时事要闻</span>
+                    </a>
+                </li>
+                
+                <if condition="MODULE_NAME eq 'Activity'">
+                <li class='active'>
+                <else />
+                <li>
+                </if>
+                    <a href="{:U('Activity/index')}">
+                        <span>品牌动态</span>
+                    </a>
+                </li>
+
+                
+            </ul>
+            <div class="user">
+                <div class="dropdown">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-user"></i>
+                        {:session('user_auth.username')}
+                    </a>
+                    <a href="{:U('Admin/edit')}">
+                        <i class="glyphicon glyphicon-cog"></i>
+                        修改密码
+                    </a>
+                    <a href="{:U('Public/logout')}">
+                        <i class="glyphicon glyphicon-off"></i>
+                        注销
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>

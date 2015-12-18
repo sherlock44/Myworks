@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>绿地房产通</title>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/css.css"/>   
+	<link rel="stylesheet" type="text/css" href="__ROOT__/css/animate.css"/> 	
+</head>
+<body>
+    <div class="bg2">        
+        <a class="back" href="javascript:history.go(-1);"></a>
+        <div class="num">
+            <div class="bg_top">
+                <img src="images/s2/bg1.jpg" width="100%">
+                <i class="bg11 animated flipInX"></i>
+                <div class="four">
+                    <a href="javascript:void(0)" class="juzhen animated fadeInUp"></a>
+                    <a href="javascript:void(0)" class="buy animated fadeInLeft"></a>
+                    <a href="javascript:void(0)" class="meiti animated fadeInDown"></a>
+                    <a href="javascript:void(0)" class="serv animated fadeInRight"></a>
+                </div>
+            </div>
+            <span class="blocks"><b></b></span>
+        <div class="s_b">
+        <i class="block"></i>
+        <div id="s_by">
+          <div class="page page-1">
+              <div class="p1"></div>
+              <div class="p2"></div>
+              <span class="juju"></span>
+          </div>
+          <div class="page page-2">
+              <div class="p1"></div>
+              <div class="p2"></div>
+              <div class="p3"></div>
+              <span class="juju"></span>
+          </div>
+          <div class="page page-3">
+              <div class="p1"></div>
+              <div class="p2"></div>
+          </div>
+        </div>
+        </div>
+        <div class="s_m">
+        <i class="block"></i>
+          <div class="page page-1">
+              <div class="p1"></div>
+              <div class="p2"></div>
+              <div class="p3"></div>
+          </div>
+        </div>
+        <div class="s_s">
+        <i class="block"></i>
+          <div class="page page-1">
+              <div class="p1"></div>
+              <div class="p2"></div>
+              <div class="p3"></div>
+          </div>
+        </div>
+        </div>
+        <div class="num">
+            <div class="bg_top">
+                <img src="__ROOT__/images/s2/bg5.jpg" width="100%">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="__ROOT__/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="__ROOT__/js/min.slip.js"></script>
+    <script type="text/javascript">
+
+    $(function(){
+    //  $('.juzhen').click(function(event) {
+    //     $(".s_j").show();
+    // });
+
+    //  $('.s_j .block').click(function(e) {
+    //     $('.s_j').hide('slow');
+    // });	
+	$('html').css({'overflow':'auto','height':'auto'});
+    $('body').css({'overflow':'auto','height':'auto'});
+    $('.bg2').css({'overflow':'auto','height':'auto'});
+    $('.num').css({'overflow':'auto','height':'auto'});
+	
+    $('.buy').click(function(event) {
+        $(".s_b").show();
+    });
+
+     $('.s_b .block').click(function(e) {
+        $('.s_b').hide('slow');
+    });
+      $('.meiti').click(function(event) {
+        $(".s_m").show();
+    });
+
+     $('.s_m .block').click(function(e) {
+        $('.s_m').hide('slow');
+    });
+     $('.serv').click(function(event) {
+        $(".s_s").show();
+    });
+
+    $('.s_s .block').click(function(e) {
+        $('.s_s').hide('slow');
+    });
+ });
+    </script>
+     <script type="text/javascript">
+        Slip(document.getElementById('s_by'), 'x').webapp().end(function() {
+        if (this.page === 3) location.reload();
+        });
+    </script>
+    <div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b1a629793e88cbec6645243a995fcdc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+
+</body>
+</html>

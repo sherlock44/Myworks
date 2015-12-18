@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <title>全球绿地-房地产</title>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/css/animate.css"/>
+</head>
+<body>
+    <div class="main page1">
+        <a class="back" href="javascript:history.go(-1);"></a>
+        <div class="num">
+            <div class="bg_top"><img src="__ROOT__/images/s1/bg1_1.jpg" width="100%">
+                <span class="more"></span>
+            </div>
+            <span class="blocks"><b></b></span>
+            <div class="s_01 grb1">
+                <i class="block"></i>
+                <span class="s_01_1 left animated"><span class="tit">超高层</span>绿地集团在超高层建筑开发领域积累了丰富的经验，开发规模和水平居全国领先地位，以企业梦想刷新城市高度，领跑中国超高层建筑领域。目前建成和在建的超高层建筑已达23幢，其中4幢高度位列世界排名前十，足迹遍布全球，均成为所在城市首屈一指的新地标。</span>
+                <span class="s_01_2"><img src="__ROOT__/images/s1/s1_1_01.png" width="52"></span>
+            </div>
+        </div>
+        <div class="num">
+            <div class="bg_top"><img src="__ROOT__/images/s1/bg1_2.jpg" width="100%"><span class="more"></span></div>
+            <span class="blocks"><b></b></span>
+            <div class="s_01 grb2">
+                <i class="block"></i>
+                <span class="s_01_1 left animated"><span class="tit">住宅</span>绿地集团秉持“绿地，让生活更美好”的企业宗旨，结合国际人居理念与先进环保技术，开发建设设计一流、环境优美、节能减排、配套完备的宜居社区，打造城市完美居住空间。</span>
+                <span class="s_01_2"><img src="__ROOT__/images/s1/s1_1_02.png" width="72"></span>
+            </div>
+        </div>
+        <div class="num">
+            <div class="bg_top"><img src="__ROOT__/images/s1/bg1_3.jpg" width="100%"><span class="more"></span></div>
+            <span class="blocks"><b></b></span>
+            <div class="s_01 grb2">
+                <i class="block"></i>
+                <span class="s_01_1 left animated"><span class="tit">城市综合体</span>绿地集团在全国范围内重点开发集商业、办公、酒店等功能于一身的现代服务业综合体，为各地城市面貌和人居生活水平提升不断努力。积极整合国内外一流商业资源，与众多商业巨擘结成战略合作关系，逐步搭建起综合高、中、低端产品系列的立体式商业地产开发运营平台。</span>
+                <span class="s_01_2"><img src="__ROOT__/images/s1/s1_1_03.png" width="72"></span>
+            </div>
+        </div>
+        <div class="num">
+            <div class="bg_top"><img src="__ROOT__/images/s1/bg1_4.jpg" width="100%"><span class="more"></span></div>
+            <div class="s_01 grb2">
+                <i class="block"></i>
+                <span class="s_01_1 left animated"><span class="tit">产城一体化</span>绿地集团在参与全国各地城镇化发展的过程中凭借自身开发实力和产业运营能力，为各地量身打造结合“生态、产业、居住、休闲”等功能于一体的二十四小时活力新城。绿地“产城一体化”模式开创了产业发展与城市发展良性互动的新格局，正成为绿地集团进军世界企业200强的发展引擎和全新增长极。</span>
+                <span class="s_01_2"><img src="__ROOT__/images/s1/s1_1_04.png" width="72"></span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="__ROOT__/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+            // var pageWidth = $(window).width();
+            // var pageHeight = $(window).height();
+
+            // $(".main .pg .bg_top").css({
+            //     "width":pageWidth+"px",
+            //     "height":pageHeight+"px"
+            // });
+
+        $(function(){
+            $('.more').click(function(event) {
+                /* Act on the event */
+                $(this).parent().siblings(".s_01").fadeIn(1000);
+                $('body').height($('.bg_top').height());
+                $('body').css({'overflow':'hidden'});
+				
+				$('body').on('touchmove',function(e){
+					e.preventDefault();
+					
+				});
+            });
+
+            $('.s_01 .block').click(function(e) {
+                //e.stopPropagation();
+                 // $(this).siblings(".img_zi").show();
+                $(this).parent('.s_01').slideUp('slow');
+                $('body').height('auto');
+                $('body').css({'overflow':'auto'});
+				$('body').off('touchmove');
+            });
+        });
+    </script>
+    <div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5b1a629793e88cbec6645243a995fcdc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+
+</body>
+</html>
